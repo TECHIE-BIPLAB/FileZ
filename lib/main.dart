@@ -11,7 +11,7 @@ class FileZ extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(
         backgroundColor: Colors.black,
         colorScheme: const ColorScheme.dark(),
