@@ -24,27 +24,42 @@ class _HomePageState extends State<HomePage> {
 
   // this function is for to pick file from storage
   void _picker() async {
+    bool isloaded = false;
+    var file, filepath;
     CustomMap;
-    List magicNumber = [];
     setState(() {
       isPicked = true;
     });
     final result = await FilePicker.platform.pickFiles(allowMultiple: false);
-    if (result == null) return;
+    if (result != null) {
+      filepath = result.files.first.path;
+      file = File(filepath!);
+      isloaded = true;
+    } else {
+      setState(() {
+        isPicked = false;
+      });
+    }
+    if (isloaded == true) {
+      findMimeType(file, filepath);
+      setState(() {
+        isPicked = true;
+      });
+    }
+  }
 
-    var filepath = result.files.first.path;
-    var file = File(filepath!);
-
+  void findMimeType(var file, var filepath) async {
+    List magicNumber = [];
     List<int> headerBytes = await file.openRead().first;
     for (var element in headerBytes) {
       magicNumber.add('0x${element.toRadixString(16)}');
     }
-    setState(() {
-      isPicked = false;
-    });
 
     final mimeType = lookupMimeType(filepath, headerBytes: headerBytes);
     final extension = extensionFromMime(mimeType!);
+    setState(() {
+      isPicked = false;
+    });
 
     Navigator.push(
         context,

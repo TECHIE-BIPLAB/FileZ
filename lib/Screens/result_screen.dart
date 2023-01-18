@@ -36,6 +36,7 @@ class _ResultScreenState extends State<ResultScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(),
         body: SizedBox(
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -131,7 +132,7 @@ class _ResultScreenState extends State<ResultScreen> {
                 height: 20,
               ),
               SizedBox(
-                  height: 500,
+                  height: 460,
                   width: 370,
                   child: Card(
                       elevation: 10,
