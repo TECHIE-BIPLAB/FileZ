@@ -19,10 +19,11 @@ A file extension checker written in Flutter
 
 ## Installation
 
-- Find out the Apk here
+- Find out the Apk [here]
 
 **Free Software, Hell Yeah!**
 
    [Flutter]: <https://flutter.dev/>
    [Mime]: <https://pub.dev/packages/mime>
    [File Picker]: <https://pub.dev/packages/file_picker>
+   [here]: <https://github.com/TECHIE-BIPLAB/FileZ/releases>
