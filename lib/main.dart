@@ -13,8 +13,8 @@ class FileZ extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        backgroundColor: Colors.black,
-        colorScheme: const ColorScheme.dark(),
+        colorScheme:
+            const ColorScheme.dark().copyWith(background: Colors.black),
       ),
       home: const HomePage(),
     );
